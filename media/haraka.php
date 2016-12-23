@@ -4,9 +4,9 @@
  * @author Brian Teeman
  * @copyright (C) 2016 - Brian Teeman
  * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
-**/
+ */
 
-defined( '_JEXEC' ) or die( 'Restricted access' );
+defined('_JEXEC') or die;
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -42,33 +42,33 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 		</div>
 		<div class="social">
 			<ul>
-				<?php if ($facebook) { ?>
+				<?php if ($facebook) : ?>
 					<li><a href="<?php echo $facebook_url; ?>" target="_blank"><i class="fa fa-facebook-square fa-5x" aria-hidden="true"></i></a></li>
-				<?php } ?>
-				<?php if ($twitter) { ?>
+				<?php endif; ?>
+				<?php if ($twitter) : ?>
 					<li><a href="<?php echo $twitter_url; ?>" target="_blank"><i class="fa fa-twitter-square fa-5x" aria-hidden="true"></i></a></li>
-				<?php } ?>
-				<?php if ($instagram) { ?>
+				<?php endif; ?>
+				<?php if ($instagram) : ?>
 					<li><a href="<?php echo $instagram_url; ?>" target="_blank"><i class="fa fa-instagram fa-5x" aria-hidden="true"></i></a></li>
-				<?php } ?>
-				<?php if ($youtube) { ?>
+				<?php endif; ?>
+				<?php if ($youtube) : ?>
 					<li><a href="<?php echo $youtube_url; ?>" target="_blank"><i class="fa fa-youtube-square fa-5x" aria-hidden="true"></i></a></li>
-				<?php } ?>
+				<?php endif; ?>
 			</ul>
 		</div>
 		<!--script at the bottom for the countdown -->
-		<?php if ($countdown == "1") { ?>
-		<script>
-			$('#counter').countdown('<?php echo $countdown_date;?>')
-			.on('update.countdown', function(event) {
-			var $this = $(this).html(event.strftime(''
-			+ '<span class="countdown_section"><span class="countdown_amount">%m</span><br /> mths</span> '
-			+ '<span class="countdown_section"><span class="countdown_amount">%w</span><br /> weeks </span> '
-			+ '<span class="countdown_section"><span class="countdown_amount">%d</span><br /> days </span> '
-			+ '<span class="countdown_section"><span class="countdown_amount">%H</span><br /> hrs </span> '
-			+ '<span class="countdown_section"><span class="countdown_amount">%M</span><br /> mins </span> '));
-			});
-		</script>
-		<?php } ?>		
+		<?php if ($countdown == "1") : ?>
+			<script>
+				$('#counter').countdown('<?php echo $countdown_date;?>')
+				.on('update.countdown', function(event) {
+				var $this = $(this).html(event.strftime(''
+				+ '<span class="countdown_section"><span class="countdown_amount">%m</span><br /> mths</span> '
+				+ '<span class="countdown_section"><span class="countdown_amount">%w</span><br /> weeks </span> '
+				+ '<span class="countdown_section"><span class="countdown_amount">%d</span><br /> days </span> '
+				+ '<span class="countdown_section"><span class="countdown_amount">%H</span><br /> hrs </span> '
+				+ '<span class="countdown_section"><span class="countdown_amount">%M</span><br /> mins </span> '));
+				});
+			</script>
+		<?php endif; ?>		
 	</body>
 </html>
