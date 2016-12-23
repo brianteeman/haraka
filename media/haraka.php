@@ -1,19 +1,19 @@
 <?php
 /**
- * @package haraka
- * @author Brian Teeman
- * @copyright (C) 2016 - Brian Teeman
- * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @package    haraka
+ * @author     Brian Teeman
+ * @copyright  (C) 2016 - Brian Teeman
+ * @license    GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
 **/
 
-defined( '_JEXEC' ) or die( 'Restricted access' );
+defined('_JEXEC') or die('Restricted access');
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta name="generator" content="Joomla! - Open Source Content Management" />
 		<meta name="robots" content="<?php echo $robots; ?>" />
 		<meta name="keywords" content="<?php echo $meta_keys; ?>" />
@@ -21,7 +21,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js"></script>
-		<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+		<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 		<link href="//fonts.googleapis.com/css?family=<?php echo $fonts; ?>" rel="stylesheet">
 		<style>
 			body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,dfn,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
@@ -42,33 +42,33 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 		</div>
 		<div class="social">
 			<ul>
-				<?php if ($facebook) { ?>
+				<?php if ($facebook) : ?>
 					<li><a href="<?php echo $facebook_url; ?>" target="_blank"><i class="fa fa-facebook-square fa-5x" aria-hidden="true"></i></a></li>
-				<?php } ?>
-				<?php if ($twitter) { ?>
+				<?php endif; ?>
+				<?php if ($twitter) : ?>
 					<li><a href="<?php echo $twitter_url; ?>" target="_blank"><i class="fa fa-twitter-square fa-5x" aria-hidden="true"></i></a></li>
-				<?php } ?>
-				<?php if ($instagram) { ?>
+				<?php endif; ?>
+				<?php if ($instagram) : ?>
 					<li><a href="<?php echo $instagram_url; ?>" target="_blank"><i class="fa fa-instagram fa-5x" aria-hidden="true"></i></a></li>
-				<?php } ?>
-				<?php if ($youtube) { ?>
+				<?php endif; ?>
+				<?php if ($youtube) : ?>
 					<li><a href="<?php echo $youtube_url; ?>" target="_blank"><i class="fa fa-youtube-square fa-5x" aria-hidden="true"></i></a></li>
-				<?php } ?>
+				<?php endif; ?>
 			</ul>
 		</div>
 		<!--script at the bottom for the countdown -->
-		<?php if ($countdown == "1") { ?>
+		<?php if ($countdown === 1) : ?>
 		<script>
-			$('#counter').countdown('<?php echo $countdown_date;?>')
+			$('#counter').countdown('<?php echo $countdown_date; ?>')
 			.on('update.countdown', function(event) {
 			var $this = $(this).html(event.strftime(''
-			+ '<span class="countdown_section"><span class="countdown_amount">%m</span><br /> mths</span> '
-			+ '<span class="countdown_section"><span class="countdown_amount">%w</span><br /> weeks </span> '
-			+ '<span class="countdown_section"><span class="countdown_amount">%d</span><br /> days </span> '
-			+ '<span class="countdown_section"><span class="countdown_amount">%H</span><br /> hrs </span> '
-			+ '<span class="countdown_section"><span class="countdown_amount">%M</span><br /> mins </span> '));
+			+ '<span class="countdown_section"><span class="countdown_amount">%m</span><br> mths</span> '
+			+ '<span class="countdown_section"><span class="countdown_amount">%w</span><br> weeks </span> '
+			+ '<span class="countdown_section"><span class="countdown_amount">%d</span><br> days </span> '
+			+ '<span class="countdown_section"><span class="countdown_amount">%H</span><br> hrs </span> '
+			+ '<span class="countdown_section"><span class="countdown_amount">%M</span><br> mins </span>'));
 			});
 		</script>
-		<?php } ?>		
+		<?php endif; ?>		
 	</body>
 </html>
