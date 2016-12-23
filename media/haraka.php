@@ -1,0 +1,72 @@
+<?php
+/**
+ * @package haraka
+ * @author Brian Teeman
+ * @copyright (C) 2016 - Brian Teeman
+ * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+**/
+
+defined( '_JEXEC' ) or die( 'Restricted access' );
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+		<meta name="generator" content="Joomla! - Open Source Content Management" />
+		<meta name="robots" content="<?php echo $robots; ?>" />
+		<meta name="keywords" content="<?php echo $meta_keys; ?>" />
+		<meta name="description" content="<?php echo $meta_desc; ?>" />
+
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js"></script>
+		<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+		<link href="//fonts.googleapis.com/css?family=<?php echo $fonts; ?>" rel="stylesheet">
+		<style>
+			body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,dfn,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+			body,h1 span{display:block}.header,body{text-align:center}.content p,.countdown_section,h1{text-shadow:1px 1px 3px #000}body,html{height:100%;font-size:100%;width:100%}body{margin:0;padding:0;color:#fff;background:url('<?php echo $bgimage_url; ?>') center top;background-size:cover;position:relative}.header{width:100%;float:left}#counter,.content{width:60%;padding:0 20%}h1{margin:.8em 0;font-size:6.25em}h1 span{font-size:.2em;line-height:0;font-weight:300}.content p{font-size:1.875em;line-height:1.33em}#counter{margin-top:3.75em;float:left}.countdown_section{color:#fff;display:inline-block;text-align:center;width:15%;box-sizing:border-box;font-size:.938em;text-transform:lowercase;font-style:italic;padding:2.667em 0;border-top:2px solid rgba(255,255,255,.2);border-bottom:2px solid rgba(255,255,255,.2)}.countdown_section:first-child{border-left:0}.countdown_amount{color:#fff;display:block;font-size:3.33em;font-weight:700;font-style:normal;line-height:.75em}.social{width:40%;float:left;padding:0 30%;margin:3.125em 0 0}.social ul li{display:inline;margin:0 1.25em}.social ul li a{color:#fff}@media only screen and (max-width:1024px){body{font-size:90%}.content{width:80%;padding:0 10%}#counter,.social{width:60%;float:left;padding:0 20%}#counter{margin-top:3.75em}.social{margin:3.125em 0 0}}@media only screen and (max-width:768px){.content p,h1{text-shadow:1px 1px 3px #000}#counter,.content,.social{width:90%;padding:0 5%}body{font-size:80%}h1{margin:.3em 0 .6em;font-size:5.25em;line-height:.9em}.content p{font-size:1.475em;line-height:1.63em}#counter{margin-top:3.75em;float:left}.social{float:left;margin:2.125em 0 0}.social ul{width:100%;float:left}}
+			body {font-family: '<?php echo $font[0]; ?>';}.countdown_section, h1 span {font-family: <?php echo $font[1]; ?>;}.content p {font-family: <?php echo $font[1]; ?>;}.countdown_amount {font-family: '<?php echo $font[0]; ?>';}
+		</style>
+		<title><?php echo $title; ?></title>
+	</head>
+	<body>
+		<div class="header">
+			<h1 id="logo"><?php echo $title; ?><span><?php echo $caption; ?></span></h1>
+		</div>
+		<div class="content">
+			<?php echo $text; ?>
+		</div>
+		<div id="counter" class="hasCountdown">
+			<!-- javascript inserts the countdown here -->
+		</div>
+		<div class="social">
+			<ul>
+				<?php if (!$facebook_url) { ?>
+					<li><a href="<?php echo $facebook_url; ?>" target="_blank"><i class="fa fa-facebook-square fa-5x" aria-hidden="true"></i></a></li>
+				<?php } ?>
+				<?php if (!$twitter_url) { ?>
+					<li><a href="<?php echo $twitter_url; ?>" target="_blank"><i class="fa fa-twitter-square fa-5x" aria-hidden="true"></i></a></li>
+				<?php } ?>
+				<?php if (!$instagram_url) { ?>
+					<li><a href="<?php echo $instagram_url; ?>" target="_blank"><i class="fa fa-instagram fa-5x" aria-hidden="true"></i></a></li>
+				<?php } ?>
+				<?php if (!$youtube_url) { ?>
+					<li><a href="<?php echo $youtube_url; ?>" target="_blank"><i class="fa fa-youtube-square fa-5x" aria-hidden="true"></i></a></li>
+				<?php } ?>
+			</ul>
+		</div>
+		<!--script at the bottom for the countdown -->
+		<script>
+			$('#counter').countdown('<?php echo $countdown_date;?>')
+			.on('update.countdown', function(event) {
+			var $this = $(this).html(event.strftime(''
+			+ '<span class="countdown_section"><span class="countdown_amount">%m</span><br /> mths</span> '
+			+ '<span class="countdown_section"><span class="countdown_amount">%w</span><br /> weeks </span> '
+			+ '<span class="countdown_section"><span class="countdown_amount">%d</span><br /> days </span> '
+			+ '<span class="countdown_section"><span class="countdown_amount">%H</span><br /> hrs </span> '
+			+ '<span class="countdown_section"><span class="countdown_amount">%M</span><br /> mins </span> '));
+			});
+		</script>
+	</body>
+</html>
