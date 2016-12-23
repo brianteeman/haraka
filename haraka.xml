@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="3.6" group="system" method="upgrade">
+	<name>PLG_SYSTEM_HARAKA_MANIFEST_NAME</name>
+	<author>Brian Teeman</author>
+	<creationDate>2016-11-01</creationDate>
+	<copyright>(c) 22016 Brian Teeman All rights reserved.</copyright>
+	<authorEmail>brian@teeman.net</authorEmail>
+	<authorUrl>https://brian.teeman.net</authorUrl>
+	<version>1.0.0</version>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<description>PLG_SYSTEM_HARAKA_MANIFEST_DESCRIPTION</description>
+	<updateservers>
+		<server type="extension" priority="1" name="Haraka Update Site">https://brian,teeman.net/updates/extensions.xml</server>
+	</updateservers>	
+	<files>
+		<folder>fields</folder>
+		<filename plugin="haraka">haraka.php</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.plg_system_haraka.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_system_haraka.sys.ini</language>
+	</languages>
+	<media folder="media" destination="plg_haraka">
+		<folder>images</folder>
+		<filename>haraka.php</filename>
+	</media>	
+	<config>
+		<fields name="params" addfieldpath="/plugins/system/haraka/fields">
+			<fieldset name="content" label="PLG_SYSTEM_HARAKA_FIELDSET_CONTENT">
+				<field 
+					name="title" 
+					type="text" 
+					default="" 
+					label="PLG_SYSTEM_HARAKA_CFG_TITLE" 
+					description="PLG_SYSTEM_HARAKA_CFG_TITLE_DESC" 
+					size="30" />
+				<field 
+					name="caption" 
+					type="text" 
+					default="" 
+					label="PLG_SYSTEM_HARAKA_CFG_CAPTION" 
+					description="PLG_SYSTEM_HARAKA_CFG_CAPTION_DESC" 
+					size="30" />
+				<field 
+					name="text" 
+					type="editor" 
+					default="" 
+					label="PLG_SYSTEM_HARAKA_CFG_TEXT" 
+					description="PLG_SYSTEM_HARAKA_CFG_TEXT_DESC" 
+					filter="safehtml"/>			
+			</fieldset>
+			<fieldset name="display" label="PLG_SYSTEM_HARAKA_FIELDSET_DISPLAY">
+				<field 
+					name="bgimage" 
+					type="imagelist" 
+					default="comingsoon.jpg" 
+					label="PLG_SYSTEM_HARAKA_CFG_IMAGE" 
+					description="PLG_SYSTEM_HARAKA_CFG_IMAGE_DESC" 
+					directory="media/plg_haraka/images"
+					/>
+				<field 
+					name="fonts"
+					type="list"
+					label="PLG_SYSTEM_HARAKA_CFG_FONTS"
+					description="PLG_SYSTEM_HARAKA_CFG_FONTS_DESC"
+					default="Alegreya+Sans|Roboto+Condensed"
+					>
+					<option value="Alegreya+Sans|Roboto+Condensed">Alegreya Sans, Roboto Condensed</option>
+					<option value="Amatic+SC|Josefin+Sans">Amatic SC, Josefin Sans</option>
+					<option value="Dancing+Script|EB+Garamond">Dancing Script, EB Garamond</option>
+					<option value="Fjalla+One|Cantarell">Fjalla One, Cantarell</option>
+					<option value="Medula+One|Abel">Medula One, Abel</option>
+					<option value="Montserrat|Neuton">Montserrat, Neuton</option>
+					<option value="Oswald|Droid+Serif">Oswald, Droid Serif</option>
+					<option value="Playfair+Display|Alice">Playfair Display, Alice</option>
+					<option value="Roboto+Slab|Roboto">Roboto Slab, Roboto</option>
+				</field>
+			</fieldset>
+			<fieldset name="date" label="PLG_SYSTEM_HARAKA_FIELDSET_COUNTDOWN">
+				<field
+					name="countdown"
+					type="radio"
+					label="PLG_SYSTEM_HARAKA_CFG_COUNTDOWN"
+					description="PLG_SYSTEM_HARAKA_CFG_COUNTDOWN_DESC"
+					default="1"
+					class="btn-group btn-group-yesno"
+					>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field 
+					name="countdown_date" 
+					type="calendar" 
+					default="2017-11-01 00:00:00" 
+					label="PLG_SYSTEM_HARAKA_CFG_COUNTDOWN_DATE" 
+					description="PLG_SYSTEM_HARAKA_CFG_COUNTDOWN_DATE_DESC" 
+					format="%Y-%m-%d %H:%M:%S"
+					showon="countdown:1"
+					/>
+			</fieldset>
+			<fieldset name="social" label="PLG_SYSTEM_HARAKA_FIELDSET_SOCIALMEDIA">
+				<field 
+					name="facebook" 
+					type="text" 
+					default="" 
+					label="PLG_SYSTEM_HARAKA_CFG_FACEBOOK" 
+					description="PLG_SYSTEM_HARAKA_CFG_FACEBOOK_DESC" 
+					size="30" />
+				<field 
+					name="twitter" 
+					type="text" default="" 
+					label="PLG_SYSTEM_HARAKA_CFG_TWITTER" 
+					description="PLG_SYSTEM_HARAKA_CFG_TWITTER_DESC" 
+					size="30" />
+				<field 
+					name="instagram" 
+					type="text" 
+					default="" 
+					label="PLG_SYSTEM_HARAKA_CFG_INSTAGRAM" 
+					description="PLG_SYSTEM_HARAKA_CFG_INSTAGRAM_DESC" 
+					size="30" />
+				<field 
+					name="youtube" 
+					type="text" 
+					default="" 
+					label="PLG_SYSTEM_HARAKA_CFG_YOUTUBE" 
+					description="PLG_SYSTEM_HARAKA_CFG_YOUTUBE_DESC" 
+					size="30" />
+			</fieldset>
+			<fieldset name="access" label="PLG_SYSTEM_HARAKA_FIELDSET_CLIENTACCESS">
+				<field 
+					name="secret" 
+					type="text" 
+					default="" 
+					label="PLG_SYSTEM_HARAKA_CFG_SECRET" 
+					description="PLG_SYSTEM_HARAKA_CFG_SECRET_DESC" 
+					size="30" />
+				<field 
+					name="whitelist" 
+					type="whitelist" 
+					default="" 
+					label="PLG_SYSTEM_HARAKA_CFG_WHITELIST" 
+					description="PLG_SYSTEM_HARAKA_CFG_WHITELIST_DESC" 
+					rows="10" 
+					cols="35" />
+			</fieldset>
+			<fieldset name="meta" label="PLG_SYSTEM_HARAKA_FIELDSET_METADATA">
+				<field 
+					name="robots"
+					type="list"
+					label="JFIELD_METADATA_ROBOTS_LABEL"
+					description="JFIELD_METADATA_ROBOTS_DESC"
+					default="noindex, nofollow"
+					>
+					<option value="index, follow">JGLOBAL_INDEX_FOLLOW</option>
+					<option value="noindex, follow">JGLOBAL_NOINDEX_FOLLOW</option>
+					<option value="index, nofollow">JGLOBAL_INDEX_NOFOLLOW</option>
+					<option value="noindex, nofollow">JGLOBAL_NOINDEX_NOFOLLOW</option>
+				</field>
+				<field 
+					name="meta_desc" 
+					type="textarea" 
+					default="" 
+					label="PLG_SYSTEM_HARAKA_CFG_META_DESC" 
+					description="PLG_SYSTEM_HARAKA_CFG_META_DESC_DESC" 
+					rows="10" 
+					cols="35" />
+				<field 
+					name="meta_keys" 
+					type="textarea" 
+					default="" 
+					label="PLG_SYSTEM_HARAKA_CFG_META_KEYS" 
+					description="PLG_SYSTEM_HARAKA_CFG_META_KEYS_DESC" 
+					rows="10" 
+					cols="35" />
+			</fieldset>
+		</fields>
+	</config>	
+</extension>
