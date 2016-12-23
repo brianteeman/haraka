@@ -42,16 +42,16 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 		</div>
 		<div class="social">
 			<ul>
-				<?php if (!$facebook_url) { ?>
+				<?php if ($facebook) { ?>
 					<li><a href="<?php echo $facebook_url; ?>" target="_blank"><i class="fa fa-facebook-square fa-5x" aria-hidden="true"></i></a></li>
 				<?php } ?>
-				<?php if (!$twitter_url) { ?>
+				<?php if ($twitter) { ?>
 					<li><a href="<?php echo $twitter_url; ?>" target="_blank"><i class="fa fa-twitter-square fa-5x" aria-hidden="true"></i></a></li>
 				<?php } ?>
-				<?php if (!$instagram_url) { ?>
+				<?php if ($instagram) { ?>
 					<li><a href="<?php echo $instagram_url; ?>" target="_blank"><i class="fa fa-instagram fa-5x" aria-hidden="true"></i></a></li>
 				<?php } ?>
-				<?php if (!$youtube_url) { ?>
+				<?php if ($youtube) { ?>
 					<li><a href="<?php echo $youtube_url; ?>" target="_blank"><i class="fa fa-youtube-square fa-5x" aria-hidden="true"></i></a></li>
 				<?php } ?>
 			</ul>
