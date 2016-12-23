@@ -40,24 +40,6 @@ class plgSystemHaraka extends JPlugin
 	private $redirect = false;
 
 	/**
-	 * Constructor.
-	 *
-	 * @param   object  &$subject  The object to observe.
-	 * @param   array   $config    An optional associative array of configuration settings.
-	 *
-	 * @return  void
-	 *
-	 * @since   1.0.0
-	 */
-	public function __construct(&$subject, $config)
-	{
-		parent::__construct($config);
-
-		// Set redirect to false per default
-		$this->redirect = false;
-	}
-
-	/**
 	 * Display the Haraka
 	 *
 	 * @return  void
