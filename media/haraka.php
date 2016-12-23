@@ -57,6 +57,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 			</ul>
 		</div>
 		<!--script at the bottom for the countdown -->
+		<?php if ($countdown == "1") { ?>
 		<script>
 			$('#counter').countdown('<?php echo $countdown_date;?>')
 			.on('update.countdown', function(event) {
@@ -68,5 +69,6 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 			+ '<span class="countdown_section"><span class="countdown_amount">%M</span><br /> mins </span> '));
 			});
 		</script>
+		<?php } ?>		
 	</body>
 </html>
