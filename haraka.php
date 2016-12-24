@@ -1,10 +1,10 @@
 <?php
 /**
- * @package haraka
- * @author Brian Teeman
- * @copyright (C) 2016 - Brian Teeman
- * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
- */
+ * @package    haraka
+ * @author     Brian Teeman
+ * @copyright  (C) 2016 - Brian Teeman
+ * @license    GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+**/
 
 defined('_JEXEC') or die;
 
@@ -54,7 +54,7 @@ class plgSystemHaraka extends JPlugin
 
 		if ($secret)
 		{
-			$display_haraka = $this->app->getUserStateFromRequest($this->_name . ".secret", $secret, '');
+			$display_haraka = $this->app->getUserStateFromRequest($this->_name . '.secret', $secret, '');
 		}
 
 		if (!$display_haraka && $whitelist)
@@ -65,13 +65,12 @@ class plgSystemHaraka extends JPlugin
 
 		if (!$display_haraka)
 		{
-			$bgimage        = $this->params->get('bgimage', 'comingsoon.jpg');
-			$bgimage_url    = JUri::base().'media/plg_haraka/images/' . $bgimage;
+			$bgimage_url    = JUri::base() . 'media/plg_haraka/images/' . $this->params->get('bgimage', 'comingsoon.jpg');
 			$caption        = $this->params->get('caption', '');
-			$countdown      = $this->params->get('countdown','1');
+			$countdown      = $this->params->get('countdown', 1);
 			$countdown_date = $this->params->get('countdown_date', '');
 			$favicon        = $this->params->get('favicon', '');
-			$fonts          = $this->params->get('fonts','Roboto+Slab|Roboto');
+			$fonts          = $this->params->get('fonts', 'Roboto+Slab|Roboto');
 			$font           = explode("|", $fonts);
 			$logo           = $this->params->get('logo', '');
 			$text           = $this->params->get('text', JText::_('PLG_SYSTEM_HARAKA_COMING_SOON'));
@@ -85,7 +84,6 @@ class plgSystemHaraka extends JPlugin
 			$meta_title = $this->params->get('meta_title', $title);
 			$robots     = $this->params->get('robots', $this->app->get('robots'));
 
-			
 			// Social Media
 			$facebook      = $this->params->get('facebook', '');
 			$facebook_url  = 'https://facebook.com/' . $facebook;
