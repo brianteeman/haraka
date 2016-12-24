@@ -1,0 +1,25 @@
+<updates>
+	<update>
+		<name>Haraka Coming Soon Page</name>
+		<description>System - Haraka Coming Soon Page 1.0.1</description>
+		<element>haraka</element>
+		<type>plugin</type>
+		<folder>system</folder>
+		<client>site</client>
+		<version>1.0.3</version>
+		<downloads>
+			<downloadurl type="full" format="zip">
+				https://github.com/brianteeman/haraka/archive/plg_system_haraka_V1.0.3.zip
+			</downloadurl>
+		</downloads>
+		<tags>
+			<tag>stable</tag>
+		</tags>
+		<infourl title="Haraka Coming Soon Page on GitHub">
+			https://github.com/brianteeman/haraka/blob/master/README.md
+		</infourl>
+		<maintainer>Brian Teeman</maintainer>
+		<maintainerurl>https://brian.teeman.net</maintainerurl>
+		<targetplatform name="joomla" version="3.[6789]"/>
+	</update>
+</updates>
