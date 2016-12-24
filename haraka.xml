@@ -14,6 +14,7 @@
 	</updateservers>
 	<files>
 		<folder>fields</folder>
+		<folder>tmpl</folder>
 		<filename plugin="haraka">haraka.php</filename>
 	</files>
 	<languages>
@@ -22,7 +23,6 @@
 	</languages>
 	<media folder="media" destination="plg_haraka">
 		<folder>images</folder>
-		<filename>haraka.php</filename>
 	</media>
 	<config>
 		<fields name="params" addfieldpath="/plugins/system/haraka/fields">

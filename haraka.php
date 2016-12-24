@@ -94,8 +94,9 @@ class plgSystemHaraka extends JPlugin
 			$youtube       = $this->params->get('youtube', '');
 			$youtube_url   = 'https://youtube.com/' . $youtube;
 
-			require(JPATH_BASE . '/media/plg_haraka/haraka.php');
-
+			$path = JPluginHelper::getLayoutPath('system', 'haraka');
+			include $path;
+			
 			$this->app->close();
 		}
 	}
