@@ -9,7 +9,7 @@
 		<version>1.0.3B</version>
 		<downloads>
 			<downloadurl type="full" format="zip">
-				https://github.com/brianteeman/haraka/archive/1.0.3_beta.zip
+				<![CDATA[https://github.com/brianteeman/haraka/archive/1.0.3_beta.zip]]>
 			</downloadurl>
 		</downloads>
 		<tags>
