@@ -22,6 +22,8 @@
 		<language tag="en-GB">language/en-GB/en-GB.plg_system_haraka.sys.ini</language>
 		<language tag="fr-FR">language/fr-FR/fr-FR.plg_system_haraka.ini</language>
 		<language tag="fr-FR">language/fr-FR/fr-FR.plg_system_haraka.sys.ini</language>
+		<language tag="nl-NL">language/nl-NL/nl-NL.plg_system_haraka.ini</language>
+		<language tag="nl-NL">language/nl-NL/nl-NL.plg_system_haraka.sys.ini</language>
 	</languages>
 	<media folder="media" destination="plg_haraka">
 		<folder>images</folder>
