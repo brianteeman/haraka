@@ -66,17 +66,17 @@
 					type="list"
 					label="PLG_SYSTEM_HARAKA_CFG_FONTS"
 					description="PLG_SYSTEM_HARAKA_CFG_FONTS_DESC"
-					default="Alegreya+Sans|Roboto+Condensed"
+					default="Alegreya Sans|Roboto Condensed"
 				>
-					<option value="Alegreya+Sans|Roboto+Condensed">Alegreya Sans, Roboto Condensed</option>
-					<option value="Amatic+SC|Josefin+Sans">Amatic SC, Josefin Sans</option>
-					<option value="Dancing+Script|EB+Garamond">Dancing Script, EB Garamond</option>
-					<option value="Fjalla+One|Cantarell">Fjalla One, Cantarell</option>
-					<option value="Medula+One|Abel">Medula One, Abel</option>
+					<option value="Alegreya Sans|Roboto Condensed">Alegreya Sans, Roboto Condensed</option>
+					<option value="Amatic SC|Josefin Sans">Amatic SC, Josefin Sans</option>
+					<option value="Dancing Script|EB Garamond">Dancing Script, EB Garamond</option>
+					<option value="Fjalla One|Cantarell">Fjalla One, Cantarell</option>
+					<option value="Medula One|Abel">Medula One, Abel</option>
 					<option value="Montserrat|Neuton">Montserrat, Neuton</option>
-					<option value="Oswald|Droid+Serif">Oswald, Droid Serif</option>
-					<option value="Playfair+Display|Alice">Playfair Display, Alice</option>
-					<option value="Roboto+Slab|Roboto">Roboto Slab, Roboto</option>
+					<option value="Oswald|Droid Serif">Oswald, Droid Serif</option>
+					<option value="Playfair Display|Alice">Playfair Display, Alice</option>
+					<option value="Roboto Slab|Roboto">Roboto Slab, Roboto</option>
 				</field>
 			</fieldset>
 			<fieldset name="date" label="PLG_SYSTEM_HARAKA_FIELDSET_COUNTDOWN">
