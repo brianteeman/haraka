@@ -62,7 +62,13 @@ class plgSystemHaraka extends JPlugin
 			}
 			else
 			{
-				$this->app->setUserState($this->_name . '.secret', $secret);
+				$this->app->setUserState($this->_name . '.secret', 0);
+				$secretRequest = $this->app->getUserStateFromRequest($this->_name . '.secret', $secret, 0);
+
+				if ($secretRequest == 1)
+				{
+					$this->app->setUserState($this->_name . '.secret', $secret);
+				}
 			}
 		}
 
