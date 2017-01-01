@@ -68,6 +68,7 @@ class plgSystemHaraka extends JPlugin
 				if ($secretRequest == 1)
 				{
 					$this->app->setUserState($this->_name . '.secret', $secret);
+					$display_haraka = true;
 				}
 			}
 		}
