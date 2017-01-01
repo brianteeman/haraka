@@ -54,7 +54,23 @@ class plgSystemHaraka extends JPlugin
 
 		if ($secret)
 		{
-			$display_haraka = $this->app->getUserStateFromRequest($this->_name . '.secret', $secret, '');
+			$storedSecret = $this->app->getUserState($this->_name . '.secret', 0);
+
+			if ($storedSecret === $secret)
+			{
+				$display_haraka = true;
+			}
+			else
+			{
+				$this->app->setUserState($this->_name . '.secret', 0);
+				$secretRequest = $this->app->getUserStateFromRequest($this->_name . '.secret', $secret, 0);
+
+				if ($secretRequest == 1)
+				{
+					$this->app->setUserState($this->_name . '.secret', $secret);
+					$display_haraka = true;
+				}
+			}
 		}
 
 		if (!$display_haraka && $whitelist)
