@@ -57,7 +57,7 @@ defined('_JEXEC') or die;
 			</ul>
 		</div>
 		<!--script at the bottom for the countdown -->
-		<?php if ($countdown === 1) : ?>
+		<?php if ($countdown == 1) : ?>
 			<script>
 				$('#counter').countdown('<?php echo $countdown_date; ?>')
 				.on('update.countdown', function(event) {
