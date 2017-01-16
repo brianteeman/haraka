@@ -33,7 +33,7 @@ defined('_JEXEC') or die;
 	<body>
 		<div class="header">
 			<h1 id="logo"><?php echo $title; ?><span><?php echo $caption; ?></span></h1>
-		</div>s
+		</div>
 		<div class="content">
 			<?php echo $text; ?>
 		</div>
