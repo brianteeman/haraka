@@ -76,7 +76,7 @@ class plgSystemHaraka extends JPlugin
 		if (!$display_haraka && $whitelist)
 		{
 			$ip_whitelist   = preg_split('/\s*\n\s*/', $whitelist);
-			$display_haraka = array_search($this->app->input->server->get('REMOTE_ADDR'), $whitelist) !== false;
+			$display_haraka = in_array($this->app->input->server->get('REMOTE_ADDR'), $ip_whitelist);
 		}
 
 		if (!$display_haraka)
