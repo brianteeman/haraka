@@ -3,11 +3,13 @@
 
 ## Download
 
-Download 1.0.13 https://github.com/brianteeman/haraka/releases/tag/1.0.13
+Download 1.0.14 https://github.com/brianteeman/haraka/releases/tag/1.0.14
 
 ### Description
 While you are developing your web site this plugin will hide the site behind a Coming Soon Page. You can customise the text and select from a combination of over 100 styles. An optional countdown clock and social media links can be displayed. Additionally you can give a secret word, or whitelist one or more IP addresses, to allow access to the site while it is under development.
 
+### 1.0.14 Release Notes
+Updated language strings to allow the countdown to be localised - thanks to the translators for updating so quickly
 ### 1.0.13 Release Notes
 This release fixes the IP address whitelist - thanks to @zero-24
 ### 1.0.12 Release Notes
