@@ -64,11 +64,11 @@ defined('_JEXEC') or die;
 				$('#counter').countdown('<?php echo $countdown_date; ?>')
 				.on('update.countdown', function(event) {
 				var $this = $(this).html(event.strftime(''
-				+ '<span class="countdown_section"><span class="countdown_amount">%m</span><br> mths</span> '
-				+ '<span class="countdown_section"><span class="countdown_amount">%w</span><br> weeks </span> '
-				+ '<span class="countdown_section"><span class="countdown_amount">%d</span><br> days </span> '
-				+ '<span class="countdown_section"><span class="countdown_amount">%H</span><br> hrs </span> '
-				+ '<span class="countdown_section"><span class="countdown_amount">%M</span><br> mins </span>'));
+				+ '<span class="countdown_section"><span class="countdown_amount">%m</span><br> <?php echo JText::_('PLG_SYSTEM_HARAKA_COUNTDOWN_MTHS'); ?> </span> '
+				+ '<span class="countdown_section"><span class="countdown_amount">%w</span><br> <?php echo JText::_('PLG_SYSTEM_HARAKA_COUNTDOWN_WEEKS'); ?> </span> '
+				+ '<span class="countdown_section"><span class="countdown_amount">%d</span><br> <?php echo JText::_('PLG_SYSTEM_HARAKA_COUNTDOWN_DAYS'); ?> </span> '
+				+ '<span class="countdown_section"><span class="countdown_amount">%H</span><br> <?php echo JText::_('PLG_SYSTEM_HARAKA_COUNTDOWN_HRS'); ?> </span> '
+				+ '<span class="countdown_section"><span class="countdown_amount">%M</span><br> <?php echo JText::_('PLG_SYSTEM_HARAKA_COUNTDOWN_MINS'); ?> </span>'));
 				});
 			</script>
 		<?php endif; ?>		
