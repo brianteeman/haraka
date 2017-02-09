@@ -6,7 +6,7 @@
 	<copyright>(c) 2016 Brian Teeman All rights reserved.</copyright>
 	<authorEmail>brian@teeman.net</authorEmail>
 	<authorUrl>https://brian.teeman.net</authorUrl>
-	<version>1.0.3</version>
+	<version>1.0.13</version>
 	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
 	<description>PLG_SYSTEM_HARAKA_MANIFEST_DESCRIPTION</description>
 	<updateservers>
@@ -20,6 +20,14 @@
 	<languages>
 		<language tag="en-GB">language/en-GB/en-GB.plg_system_haraka.ini</language>
 		<language tag="en-GB">language/en-GB/en-GB.plg_system_haraka.sys.ini</language>
+		<language tag="de-DE">language/de-DE/de-DE.plg_system_haraka.ini</language>
+		<language tag="de-DE">language/de-DE/de-DE.plg_system_haraka.sys.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.plg_system_haraka.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.plg_system_haraka.sys.ini</language>
+		<language tag="nl-NL">language/nl-NL/nl-NL.plg_system_haraka.ini</language>
+		<language tag="nl-NL">language/nl-NL/nl-NL.plg_system_haraka.sys.ini</language>
+		<language tag="pt-BR">language/pt-BR/pt-BR.plg_system_haraka.ini</language>
+		<language tag="pt-BR">language/pt-BR/pt-BR.plg_system_haraka.sys.ini</language>
 	</languages>
 	<media folder="media" destination="plg_haraka">
 		<folder>images</folder>

@@ -54,13 +54,29 @@ class plgSystemHaraka extends JPlugin
 
 		if ($secret)
 		{
-			$display_haraka = $this->app->getUserStateFromRequest($this->_name . '.secret', $secret, '');
+			$storedSecret = $this->app->getUserState($this->_name . '.secret', 0);
+
+			if ($storedSecret === $secret)
+			{
+				$display_haraka = true;
+			}
+			else
+			{
+				$this->app->setUserState($this->_name . '.secret', 0);
+				$secretRequest = $this->app->getUserStateFromRequest($this->_name . '.secret', $secret, 0);
+
+				if ($secretRequest == 1)
+				{
+					$this->app->setUserState($this->_name . '.secret', $secret);
+					$display_haraka = true;
+				}
+			}
 		}
 
 		if (!$display_haraka && $whitelist)
 		{
 			$ip_whitelist   = preg_split('/\s*\n\s*/', $whitelist);
-			$display_haraka = array_search($this->app->input->server->get('REMOTE_ADDR'), $whitelist) !== false;
+			$display_haraka = in_array($this->app->input->server->get('REMOTE_ADDR'), $ip_whitelist);
 		}
 
 		if (!$display_haraka)
@@ -69,11 +85,10 @@ class plgSystemHaraka extends JPlugin
 			$caption        = $this->params->get('caption', '');
 			$countdown      = $this->params->get('countdown', 1);
 			$countdown_date = $this->params->get('countdown_date', '');
-			$favicon        = $this->params->get('favicon', '');
 			$fonts          = $this->params->get('fonts', 'Roboto+Slab|Roboto');
 			$font           = explode("|", $fonts);
-			$logo           = $this->params->get('logo', '');
-			$text           = $this->params->get('text', JText::_('PLG_SYSTEM_HARAKA_COMING_SOON'));
+			$fontcss        = str_replace('+',' ', $font);
+			$text           = $this->params->get('text', '<p>' . JText::_('PLG_SYSTEM_HARAKA_COMING_SOON') . '</p>');
 			$theme          = $this->params->get('theme', 'light');
 			$uri            = JUri::getInstance();
 
@@ -81,7 +96,6 @@ class plgSystemHaraka extends JPlugin
 			$meta_desc  = $this->params->get('meta_desc', $this->app->get('MetaDesc'));
 			$meta_keys  = $this->params->get('meta_keys', $this->app->get('MetaKeys'));
 			$title      = $this->params->get('title', $this->app->get('sitename'));
-			$meta_title = $this->params->get('meta_title', $title);
 			$robots     = $this->params->get('robots', $this->app->get('robots'));
 
 			// Social Media
@@ -96,7 +110,7 @@ class plgSystemHaraka extends JPlugin
 
 			$path = JPluginHelper::getLayoutPath('system', 'haraka');
 			include $path;
-			
+
 			$this->app->close();
 		}
 	}
