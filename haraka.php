@@ -2,9 +2,9 @@
 /**
  * @package    haraka
  * @author     Brian Teeman
- * @copyright  (C) 2016 - Brian Teeman
+ * @copyright  (C) 2016 - 2017 - Brian Teeman
  * @license    GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
-**/
+ */
 
 defined('_JEXEC') or die;
 
@@ -32,12 +32,12 @@ class plgSystemHaraka extends JPlugin
 	protected $autoloadLanguage = true;
 
 	/**
-	 * Redirect variable
+	 * Display the Haraka
 	 *
 	 * @var    boolean
 	 * @since  1.0.0
 	 */
-	private $redirect = false;
+	protected $displayHaraka = false;
 
 	/**
 	 * Display the Haraka
@@ -48,9 +48,8 @@ class plgSystemHaraka extends JPlugin
 	 */
 	private function displayHaraka()
 	{
-		$display_haraka = false;
-		$secret         = trim($this->params->get('secret', ''));
-		$whitelist      = trim($this->params->get('whitelist', ''));
+		$secret    = trim($this->params->get('secret', ''));
+		$whitelist = trim($this->params->get('whitelist', ''));
 
 		if ($secret)
 		{
@@ -58,7 +57,7 @@ class plgSystemHaraka extends JPlugin
 
 			if ($storedSecret === $secret)
 			{
-				$display_haraka = true;
+				$this->displayHaraka = true;
 			}
 			else
 			{
@@ -68,45 +67,39 @@ class plgSystemHaraka extends JPlugin
 				if ($secretRequest == 1)
 				{
 					$this->app->setUserState($this->_name . '.secret', $secret);
-					$display_haraka = true;
+					$this->displayHaraka = true;
 				}
 			}
 		}
 
-		if (!$display_haraka && $whitelist)
+		if (!$this->displayHaraka && $whitelist)
 		{
-			$ip_whitelist   = preg_split('/\s*\n\s*/', $whitelist);
-			$display_haraka = in_array($this->app->input->server->get('REMOTE_ADDR'), $ip_whitelist);
+			$whitelist           = preg_split('/\s*\n\s*/', $whitelist);
+			$this->displayHaraka = in_array($this->app->input->server->get('REMOTE_ADDR'), $whitelist);
 		}
 
-		if (!$display_haraka)
+		if (!$this->displayHaraka)
 		{
-			$bgimage_url    = JUri::base() . 'media/plg_haraka/images/' . $this->params->get('bgimage', 'comingsoon.jpg');
-			$caption        = $this->params->get('caption', '');
-			$countdown      = $this->params->get('countdown', 1);
-			$countdown_date = $this->params->get('countdown_date', '');
-			$fonts          = $this->params->get('fonts', 'Roboto+Slab|Roboto');
-			$font           = explode("|", $fonts);
-			$fontcss        = str_replace('+',' ', $font);
-			$text           = $this->params->get('text', '<p>' . JText::_('PLG_SYSTEM_HARAKA_COMING_SOON') . '</p>');
-			$theme          = $this->params->get('theme', 'light');
-			$uri            = JUri::getInstance();
+			$bgimageUrl    = JUri::base() . 'media/plg_haraka/images/' . $this->params->get('bgimage', 'comingsoon.jpg');
+			$caption       = $this->params->get('caption', '');
+			$countdown     = $this->params->get('countdown', 1);
+			$countdownDate = $this->params->get('countdown_date', '');
+			$font          = explode('|', $this->params->get('fonts', 'Roboto+Slab|Roboto'));
+			$fontcss       = str_replace('+',' ', $font);
+			$text          = $this->params->get('text', '<p>' . JText::_('PLG_SYSTEM_HARAKA_COMING_SOON') . '</p>');
+			$theme         = $this->params->get('theme', 'light');
 
 			// Meta
-			$meta_desc  = $this->params->get('meta_desc', $this->app->get('MetaDesc'));
-			$meta_keys  = $this->params->get('meta_keys', $this->app->get('MetaKeys'));
-			$title      = $this->params->get('title', $this->app->get('sitename'));
-			$robots     = $this->params->get('robots', $this->app->get('robots'));
+			$metaDesc = $this->params->get('meta_desc', $this->app->get('MetaDesc'));
+			$metaKeys = $this->params->get('meta_keys', $this->app->get('MetaKeys'));
+			$title    = $this->params->get('title', $this->app->get('sitename'));
+			$robots   = $this->params->get('robots', $this->app->get('robots'));
 
 			// Social Media
-			$facebook      = $this->params->get('facebook', '');
-			$facebook_url  = 'https://facebook.com/' . $facebook;
-			$instagram     = $this->params->get('instagram', '');
-			$instagram_url = 'https://instagram.com/' . $instagram;
-			$twitter       = $this->params->get('twitter', '');
-			$twitter_url   = 'https://twitter.com/' . $twitter;
-			$youtube       = $this->params->get('youtube', '');
-			$youtube_url   = 'https://youtube.com/' . $youtube;
+			$facebook  = $this->params->get('facebook', '');
+			$instagram = $this->params->get('instagram', '');
+			$twitter   = $this->params->get('twitter', '');
+			$youtube   = $this->params->get('youtube', '');
 
 			$path = JPluginHelper::getLayoutPath('system', 'haraka');
 			include $path;
@@ -128,5 +121,5 @@ class plgSystemHaraka extends JPlugin
 		{
 			$this->displayHaraka();
 		}
-	}	
+	}
 }
