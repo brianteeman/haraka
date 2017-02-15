@@ -44,16 +44,16 @@ defined('_JEXEC') or die;
 		<div class="social">
 			<ul>
 				<?php if ($facebook) : ?>
-					<li><a href="<?php echo 'https://facebook.com/' . $facebook ?>" target="_blank"><i class="fa fa-facebook-square fa-5x" aria-hidden="true"></i></a></li>
+					<li><a href="<?php echo $facebook_url; ?>" target="_blank"><i class="fa fa-facebook-square fa-5x" aria-hidden="true"></i></a></li>
 				<?php endif; ?>
 				<?php if ($twitter) : ?>
-					<li><a href="<?php echo 'https://twitter.com/' . $twitter; ?>" target="_blank"><i class="fa fa-twitter-square fa-5x" aria-hidden="true"></i></a></li>
+					<li><a href="<?php echo $twitter_url; ?>" target="_blank"><i class="fa fa-twitter-square fa-5x" aria-hidden="true"></i></a></li>
 				<?php endif; ?>
 				<?php if ($instagram) : ?>
-					<li><a href="<?php echo 'https://instagram.com/' . $instagram; ?>" target="_blank"><i class="fa fa-instagram fa-5x" aria-hidden="true"></i></a></li>
+					<li><a href="<?php echo $instagram_url; ?>" target="_blank"><i class="fa fa-instagram fa-5x" aria-hidden="true"></i></a></li>
 				<?php endif; ?>
 				<?php if ($youtube) : ?>
-					<li><a href="<?php echo 'https://youtube.com/' . $youtube; ?>" target="_blank"><i class="fa fa-youtube-square fa-5x" aria-hidden="true"></i></a></li>
+					<li><a href="<?php echo $youtube_url; ?>" target="_blank"><i class="fa fa-youtube-square fa-5x" aria-hidden="true"></i></a></li>
 				<?php endif; ?>
 			</ul>
 		</div>
@@ -61,7 +61,7 @@ defined('_JEXEC') or die;
 		<!--script at the bottom for the countdown -->
 		<?php if ($countdown == 1) : ?>
 			<script>
-				$('#counter').countdown('<?php echo $countdownDate; ?>')
+				$('#counter').countdown('<?php echo $countdown_date; ?>')
 				.on('update.countdown', function(event) {
 				var $this = $(this).html(event.strftime(''
 				+ '<span class="countdown_section"><span class="countdown_amount">%m</span><br> <?php echo JText::_('PLG_SYSTEM_HARAKA_COUNTDOWN_MTHS'); ?> </span> '
