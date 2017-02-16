@@ -106,7 +106,7 @@ class plgSystemHaraka extends JPlugin
 			$instagram_url = 'https://instagram.com/' . $instagram;
 			$twitter_url   = 'https://twitter.com/' . $twitter;
 			$youtube_url   = 'https://youtube.com/' . $youtube;
-			
+
 			$path = JPluginHelper::getLayoutPath('system', 'haraka');
 			include $path;
 
