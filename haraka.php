@@ -84,7 +84,8 @@ class plgSystemHaraka extends JPlugin
 			$caption        = $this->params->get('caption', '');
 			$countdown      = $this->params->get('countdown', 1);
 			$countdown_date = $this->params->get('countdown_date', '');
-			$font           = explode('|', $this->params->get('fonts', 'Roboto+Slab|Roboto'));
+			$fonts          = $this->params->get('fonts', 'Roboto+Slab|Roboto');
+			$font           = explode('|', $fonts);
 			$fontcss        = str_replace('+',' ', $font);
 			$text           = $this->params->get('text', '<p>' . JText::_('PLG_SYSTEM_HARAKA_COMING_SOON') . '</p>');
 			$theme          = $this->params->get('theme', 'light');
