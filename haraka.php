@@ -124,7 +124,7 @@ class plgSystemHaraka extends JPlugin
 	 */
 	public function onAfterInitialise()
 	{
-		if ($this->app->isSite())
+		if ($this->app->isClient('site'))
 		{
 			$this->displayHaraka();
 		}
