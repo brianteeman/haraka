@@ -6,7 +6,7 @@
 	<copyright>(c) 2016 - 2017 - Brian Teeman All rights reserved.</copyright>
 	<authorEmail>brian@teeman.net</authorEmail>
 	<authorUrl>https://brian.teeman.net</authorUrl>
-	<version>1.0.15</version>
+	<version>1.1.0</version>
 	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
 	<description>PLG_SYSTEM_HARAKA_MANIFEST_DESCRIPTION</description>
 	<updateservers>
@@ -75,7 +75,7 @@
 					label="PLG_SYSTEM_HARAKA_CFG_FONTS"
 					description="PLG_SYSTEM_HARAKA_CFG_FONTS_DESC"
 					default="Alegreya+Sans|Roboto+Condensed"
-				>
+					>
 					<option value="Alegreya+Sans|Roboto+Condensed">Alegreya Sans, Roboto Condensed</option>
 					<option value="Amatic+SC|Josefin+Sans">Amatic SC, Josefin Sans</option>
 					<option value="Dancing+Script|EB+Garamond">Dancing Script, EB Garamond</option>
@@ -94,10 +94,10 @@
 					label="PLG_SYSTEM_HARAKA_CFG_COUNTDOWN"
 					description="PLG_SYSTEM_HARAKA_CFG_COUNTDOWN_DESC"
 					default="1"
-					class="btn-group btn-group-yesno"
-				>
-					<option value="1">JYES</option>
+                    layout="joomla.form.field.radio.switcher"
+					>
 					<option value="0">JNO</option>
+					<option value="1">JYES</option>
 				</field>
 				<field
 					name="countdown_date"
@@ -169,11 +169,11 @@
 					label="JFIELD_METADATA_ROBOTS_LABEL"
 					description="JFIELD_METADATA_ROBOTS_DESC"
 					default="noindex, nofollow"
-				>
-					<option value="index, follow">JGLOBAL_INDEX_FOLLOW</option>
-					<option value="noindex, follow">JGLOBAL_NOINDEX_FOLLOW</option>
-					<option value="index, nofollow">JGLOBAL_INDEX_NOFOLLOW</option>
-					<option value="noindex, nofollow">JGLOBAL_NOINDEX_NOFOLLOW</option>
+					>
+					<option value="index, follow"></option>
+					<option value="noindex, follow"></option>
+					<option value="index, nofollow"></option>
+					<option value="noindex, nofollow"></option>
 				</field>
 				<field
 					name="meta_desc"
@@ -181,15 +181,6 @@
 					default=""
 					label="PLG_SYSTEM_HARAKA_CFG_META_DESC"
 					description="PLG_SYSTEM_HARAKA_CFG_META_DESC_DESC"
-					rows="10"
-					cols="35"
-				/>
-				<field
-					name="meta_keys"
-					type="textarea"
-					default=""
-					label="PLG_SYSTEM_HARAKA_CFG_META_KEYS"
-					description="PLG_SYSTEM_HARAKA_CFG_META_KEYS_DESC"
 					rows="10"
 					cols="35"
 				/>
